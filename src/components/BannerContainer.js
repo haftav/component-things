@@ -6,16 +6,23 @@ import BannerRoll from './BannerContainer/BannerRoll';
 import BannerItem from './BannerContainer/BannerItem';
 
 
+//required props:
+    //bannerItems
+//possible props:
+    //itemWidth, itemHeight, bannerStyles, fontColor
+
+
 class BannerContainer extends React.Component {
     render() {
         const extraItems = this.props.bannerItems.concat(this.props.bannerItems);
         return (
-            <Container>
+            <Container style={this.props.bannerStyles} width={this.props.bannerWidth} >
                 <BannerRoll {...this.props} >
                     {extraItems.map((item, i) => <BannerItem 
                                                     key={`${item}.${i}`} 
                                                     number={item} 
-                                                    width={this.props.itemWidth}/>)}
+                                                    width={this.props.itemWidth}
+                                                    fontStyles={this.props.fontStyles}/>)}
                 </BannerRoll>
             </Container>
         )
@@ -24,11 +31,8 @@ class BannerContainer extends React.Component {
 
 const Container = styled.div`
     width: ${props => props.width ? `${props.width}px` : "100%"};
-    height: ${props => props.height ? `${props.height}px` : "100px"};
-    background: skyblue;
     margin: auto;
     overflow: hidden;
-    border: 3px solid steelblue;
 `
 
 BannerContainer.propTypes = {
@@ -41,6 +45,7 @@ BannerContainer.propTypes = {
         PropTypes.number,
         PropTypes.string,
     ]),
+    bannerStyles: PropTypes.object
 };
 
 

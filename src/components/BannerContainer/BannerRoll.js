@@ -30,8 +30,7 @@ const Container = styled.div`
     border-left: none;
     border-right: none;
     margin-left: 0px;
-    animation: ${looper} 10s linear infinite;    
-    
+    animation: ${looper} 7s linear infinite;
 `
 
 BannerRoll.defaultProps = {

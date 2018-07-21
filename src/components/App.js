@@ -3,15 +3,31 @@ import styled from 'styled-components'
 
 import BannerContainer from './BannerContainer';
 
-const bannerItems = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+const bannerItems = [
+    'NU-DISCO', 'BREAKBEAT', 'DRUM AND BASS',
+    'DUBSTEP', 'TRAP', 'HIP HOP',
+    'TECHNO', 'METAL', 'LOUNGE',
+    'DEEP HOUSE', 'POP', 'PUNK',
+    'JAZZ', 'AVANT-GARDE', 'REGGAE'];
 
+const fontStyles = {
+    color: '#85769A',
+    fontFamily: 'sans-serif'
+}
+
+const bannerStyles = {
+    backgroundColor: '#544666',
+    height: '35px'
+}
 
 export default class App extends React.Component {
     render() {
         return (
             <Wrapper>
                 <BannerContainer bannerItems={bannerItems}
-                                itemWidth={70}/>    
+                                itemWidth={50}
+                                fontStyles={fontStyles}
+                                bannerStyles={bannerStyles}/>    
             </Wrapper>
         )
     }
