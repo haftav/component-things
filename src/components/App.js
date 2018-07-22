@@ -25,9 +25,9 @@ export default class App extends React.Component {
         return (
             <Wrapper>
                 <BannerContainer bannerItems={bannerItems}
-                                itemWidth={50}
                                 fontStyles={fontStyles}
-                                bannerStyles={bannerStyles}/>    
+                                bannerStyles={bannerStyles}
+                                 />    
             </Wrapper>
         )
     }

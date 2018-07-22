@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const BannerItem = ( { number, width, fontStyles } ) => {
-    console.log(width);
     return (
         <Item width={width} style={fontStyles}>
             <p>{ number }</p>
@@ -11,12 +10,13 @@ const BannerItem = ( { number, width, fontStyles } ) => {
 }
 
 const Item = styled.div`
-    width: ${props => props.width ? `${props.width}px` : '30px'};
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    margin: 0px 5px;
+    margin-right: 0px;
+    white-space: nowrap;
+    border: 1px solid white;
 `
 
 export default BannerItem;
