@@ -1,53 +1,43 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-
-const BannerRoll = ({ children, bannerItems, itemWidth, itemHeight, divider }) => {
-    console.log(itemWidth);
+class BannerRoll extends React.Component {
+  render() {
     let bannerWidth;
-    if (itemWidth) {
-        if (divider) {
-            bannerWidth = bannerItems.length * itemWidth * 4;
-        } else {
-            bannerWidth = ( bannerItems.length * itemWidth * 2 ) + (5 * bannerItems.length * 2) ;
-        }
-    } 
-
-    
-    console.log(bannerWidth)
+    const { children, bannerItems, itemWidth, itemHeight, divider } = this.props;
     return (
-        <Container width={bannerWidth} itemWidth={itemWidth} count={bannerItems.length}>
-            {children}
-        </Container>
-    )
+      <Container id="banner-roll" itemWidth={itemWidth} count={bannerItems.length}>
+        {children}
+      </Container>
+    );
+  }
 }
 
-const looper = (props) => keyframes`
+const looper = keyframes`
     from {
-        transform: translate(0px,0px);
+        transform: translateX(0%);
     }
     to {
-        transform: translate(-50%, 0px);
+        transform: translateX(-50%);
     }
-`
+`;
+
 
 const Container = styled.div`
-    display: flex;
-    height: 100%;
-    width: ${props => props.width ? `${props.width}px` : 'calc(100% * 2)'};
-    justify-content: space-around;
-    border-left: none;
-    border-right: none;
-    margin-left: 0px;
-    animation: ${looper} 10s linear infinite;
-
-`
-
-// BannerRoll.defaultProps = {
-//     itemWidth: 100
-//   };
+  display: inline-flex;
+  height: 100%;
+  flex: auto;
+  justify-content: flex-start;
+  border-left: none;
+  border-right: none;
+  overflow: hidden;
+  animation: ${looper} 10s linear infinite;
+  transition: 1s linear;
+  position: relative;
+  z-index: 6;
+`;
 
 
 export default BannerRoll;

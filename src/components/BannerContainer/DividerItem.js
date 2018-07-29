@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-const BannerItem = ({ content, margin, fontStyles }) => {
+const DividerItem = ({ content, dividerStyles, icon }) => {
   return (
-    <Item margin={margin} style={fontStyles}>
-      <p>{content}</p>
+    <Item style={dividerStyles}>
+      <i className={icon} />
     </Item>
   );
 };
@@ -15,10 +15,12 @@ const Item = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: ${props => props.margin ? `0px ${props.margin}px` : "0px 15px"};
+  margin: 0px 0px;
   white-space: nowrap;
+  font-size: 5px;
+  color: white;
   position: relative;
   z-index: 6;
 `;
 
-export default BannerItem;
+export default DividerItem;
