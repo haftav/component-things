@@ -18,10 +18,9 @@ class BannerContainer extends React.Component {
       bannerStyles,
       bannerWidth,
       fontStyles,
-      width,
       spacing,
-      divider,
-      dividerStyles
+      icon,
+      iconStyles
     } = this.props;
     return (
       <Container id="banner-container" style={bannerStyles} width={bannerWidth}>
@@ -34,10 +33,10 @@ class BannerContainer extends React.Component {
                   fontStyles={fontStyles}
                   margin={spacing}
                 />
-                {divider && (
+                {icon && (
                   <DividerItem
-                    icon={divider}
-                    dividerStyles={dividerStyles}
+                    icon={icon}
+                    iconStyles={iconStyles}
                   />
                 )}
               </ChildrenContainer>
@@ -53,23 +52,21 @@ const Container = styled.div`
   width: ${props => (props.width ? `${props.width}px` : "100%")};
   margin: auto;
   overflow: hidden;
-  position: relative;
-  z-index: 4;
 `;
 
 const ChildrenContainer = styled.div`
   display: flex;
   flex-direction: row;
-  position: relative;
-  z-index: 5;
 `;
 
 BannerContainer.propTypes = {
   bannerItems: PropTypes.array.isRequired,
-  itemWidth: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  itemHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  bannerWidth: PropTypes.number,
+  fontStyles: PropTypes.object,
   bannerStyles: PropTypes.object,
-  fontStyles: PropTypes.object
+  iconStyles: PropTypes.object,
+  divider: PropTypes.string,
+  spacing: PropTypes.number,
 };
 
 export default BannerContainer;

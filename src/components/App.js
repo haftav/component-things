@@ -31,7 +31,7 @@ const bannerStyles = {
   height: "35px"
 };
 
-const dividerStyles= {
+const iconStyles= {
     color: "#85769A",
 }
 
@@ -43,9 +43,8 @@ export default class App extends React.Component {
           bannerItems={bannerItems}
           bannerStyles={bannerStyles}
           fontStyles={fontStyles}
-          dividerStyles={dividerStyles}
-          divider="fas fa-circle"
-          spacing={25}
+          iconStyles={iconStyles}
+          icon="fas fa-circle"
         />
       </Wrapper>
     );

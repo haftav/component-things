@@ -17,8 +17,6 @@ const Item = styled.div`
   align-items: center;
   margin: ${props => props.margin ? `0px ${props.margin}px` : "0px 15px"};
   white-space: nowrap;
-  position: relative;
-  z-index: 6;
 `;
 
 export default BannerItem;

@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-const DividerItem = ({ content, dividerStyles, icon }) => {
+const DividerItem = ({ content, iconStyles, icon }) => {
   return (
-    <Item style={dividerStyles}>
+    <Item style={iconStyles}>
       <i className={icon} />
     </Item>
   );
@@ -19,8 +19,6 @@ const Item = styled.div`
   white-space: nowrap;
   font-size: 5px;
   color: white;
-  position: relative;
-  z-index: 6;
 `;
 
 export default DividerItem;

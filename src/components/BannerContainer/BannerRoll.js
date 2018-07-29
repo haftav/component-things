@@ -35,8 +35,6 @@ const Container = styled.div`
   overflow: hidden;
   animation: ${looper} 10s linear infinite;
   transition: 1s linear;
-  position: relative;
-  z-index: 6;
 `;
 
 
